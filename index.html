@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NebulaChat — Asisten AI dengan Kekuatan Black Hole</title>
+<meta name="description" content="NebulaChat: chat AI cepat dengan streaming, web search, kontrol model penuh, dan panel admin.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='7' fill='black' stroke='%23ffa94d' stroke-width='2.5'/><ellipse cx='16' cy='16' rx='14' ry='5' fill='none' stroke='%23ffa94d' stroke-width='1.6' transform='rotate(-18 16 16)'/></svg>">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<div class="stars" aria-hidden="true"></div>
+
+<header class="nav">
+  <a class="brand" href="index.html">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <span>NebulaChat</span>
+  </a>
+  <nav class="nav-links">
+    <a href="#fitur">Fitur</a>
+    <a href="#cara">Cara kerja</a>
+    <a href="#model">Model</a>
+  </nav>
+  <div class="nav-cta">
+    <a class="btn btn-ghost" href="admin.html">Panel Admin</a>
+    <a class="btn btn-primary" href="app.html">Mulai Chat</a>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <canvas id="blackhole" aria-label="Animasi black hole"></canvas>
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="hero-inner">
+      <p class="eyebrow">Asisten AI · Streaming · Web Search</p>
+      <h1>Tarik jawaban dari<br>lubang <em>pengetahuan.</em></h1>
+      <p class="lede">Chat AI secepat ChatGPT: streaming token real-time, pencarian web, input suara &amp; gambar, plus panel admin untuk mengatur API, backend, dan model sesukamu.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary btn-lg" href="app.html">Mulai Chat Gratis</a>
+        <a class="btn btn-ghost btn-lg" href="#fitur">Lihat Fitur</a>
+      </div>
+      <dl class="hero-stats">
+        <div><dt>Streaming</dt><dd>Real-time token</dd></div>
+        <div><dt>Search</dt><dd>Tavily · Serper · Brave</dd></div>
+        <div><dt>OpenAI</dt><dd>Compatible API</dd></div>
+      </dl>
+    </div>
+    <a class="scroll-hint" href="#fitur" aria-label="Gulir ke fitur">↓</a>
+  </section>
+
+  <!-- FITUR -->
+  <section class="section" id="fitur">
+    <div class="wrap">
+      <h2>Semua yang kamu harapkan dari chat AI modern</h2>
+      <p class="sub">Dan panel admin agar kamu yang memegang kendali penuh atas backend-nya.</p>
+      <div class="grid feat">
+        <article class="card span7">
+          <h3>Streaming super responsif</h3>
+          <p>Token mengalir kata per kata dengan tombol Stop, indikator mengetik, dan estimasi token + biaya per pesan.</p>
+        </article>
+        <article class="card span5">
+          <h3>Web search bawaan</h3>
+          <p>Aktifkan pencarian web. AI membaca hasil Tavily, Serper, Brave, atau endpoint custom lalu menjawab dengan sitasi sumber.</p>
+        </article>
+        <article class="card span4">
+          <h3>Multimodal</h3>
+          <p>Kirim gambar untuk dianalisis model vision, tempel file teks sebagai konteks, atau bicara lewat input suara.</p>
+        </article>
+        <article class="card span4">
+          <h3>Perpustakaan prompt</h3>
+          <p>Template siap pakai (ringkas, email, kode, ide konten) plus prompt kustom buatanmu sendiri.</p>
+        </article>
+        <article class="card span4">
+          <h3>Manajemen chat</h3>
+          <p>Pin, cari, rename, hapus, ekspor Markdown/JSON, bagikan via tautan, dan mode command dengan Ctrl+K.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CARA KERJA -->
+  <section class="section" id="cara">
+    <div class="wrap">
+      <h2>Online dalam 3 langkah</h2>
+      <ol class="steps">
+        <li><strong>1. Buka Panel Admin</strong><span>Masukkan base URL &amp; API key (OpenAI atau kompatibel), lalu klik “Ambil daftar model”.</span></li>
+        <li><strong>2. Atur search (opsional)</strong><span>Pilih provider Tavily / Serper / Brave / Custom, masukkan key-nya.</span></li>
+        <li><strong>3. Mulai chat</strong><span>Pilih model, aktifkan web search bila perlu, dan kirim pesan pertama.</span></li>
+      </ol>
+      <div class="center"><a class="btn btn-primary btn-lg" href="admin.html">Buka Panel Admin</a></div>
+    </div>
+  </section>
+
+  <!-- MODEL -->
+  <section class="section" id="model">
+    <div class="wrap">
+      <h2>Bebas pilih backend &amp; model</h2>
+      <p class="sub">Kompatibel dengan API gaya OpenAI — OpenAI langsung, Azure OpenAI, OpenRouter, Ollama lokal, LM Studio, vLLM, dan lainnya.</p>
+      <div class="chips">
+        <span>gpt-4o</span><span>gpt-4o-mini</span><span>o4-mini</span><span>Llama 3</span><span>Mistral</span><span>Qwen</span><span>DeepSeek</span><span>Ollama lokal</span>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap foot">
+    <span>NebulaChat — dibuat dengan HTML + CSS + JS murni, tanpa build step.</span>
+    <span><a href="app.html">Chat</a> · <a href="admin.html">Admin</a></span>
+  </div>
+</footer>
+
+<script src="assets/js/blackhole.js"></script>
+</body>
+</html>

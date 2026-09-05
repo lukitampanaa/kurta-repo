@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NebulaChat — Panel Admin</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='7' fill='black' stroke='%23ffa94d' stroke-width='2.5'/><ellipse cx='16' cy='16' rx='14' ry='5' fill='none' stroke='%23ffa94d' stroke-width='1.6' transform='rotate(-18 16 16)'/></svg>">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<div class="shell">
+  <aside class="sidebar" id="sidebar">
+    <div class="side-head">
+      <a class="btn btn-ghost btn-sm" href="app.html" style="text-decoration:none">← Chat</a>
+      <button class="btn btn-ghost btn-sm" id="btnToggle2">⟨</button>
+    </div>
+    <div class="side-list">
+      <div class="side-sec">Admin</div>
+      <button class="chat-item" data-tab="api"><span class="t">🔌 Koneksi API</span></button>
+      <button class="chat-item" data-tab="models"><span class="t">🧠 Model &amp; Parameter</span></button>
+      <button class="chat-item" data-tab="search"><span class="t">🌐 Web Search</span></button>
+      <button class="chat-item" data-tab="app"><span class="t">🎛 Aplikasi &amp; Keamanan</span></button>
+      <button class="chat-item" data-tab="data"><span class="t">💾 Data</span></button>
+    </div>
+    <div class="side-foot"><a href="index.html">← Beranda</a></div>
+  </aside>
+
+  <div class="main">
+    <div class="topbar">
+      <button class="icon-btn" id="btnToggle">☰</button>
+      <strong>Panel Admin</strong>
+      <div class="top-actions"><span class="usage" id="saveState">tersimpan otomatis</span></div>
+    </div>
+    <div class="admin-main"><div class="admin-inner" id="adminInner"></div></div>
+  </div>
+</div>
+
+<script src="assets/js/core.js"></script>
+<script src="assets/js/admin.js"></script>
+</body>
+</html>

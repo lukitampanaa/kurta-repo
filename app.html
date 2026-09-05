@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NebulaChat — Chat</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='7' fill='black' stroke='%23ffa94d' stroke-width='2.5'/><ellipse cx='16' cy='16' rx='14' ry='5' fill='none' stroke='%23ffa94d' stroke-width='1.6' transform='rotate(-18 16 16)'/></svg>">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+</head>
+<body>
+<div class="shell">
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar" aria-label="Riwayat chat">
+    <div class="side-head">
+      <button class="btn btn-ghost btn-sm" id="btnNew">+ Chat baru</button>
+      <button class="btn btn-ghost btn-sm" id="btnToggle2" title="Sembunyikan panel">⟨</button>
+    </div>
+    <div class="side-search">
+      <input type="text" id="searchChats" placeholder="Cari chat…" aria-label="Cari chat">
+    </div>
+    <div class="side-list" id="chatList"></div>
+    <div class="side-foot">
+      <div class="usage" id="usageLine">— token sesi ini</div>
+      <a href="admin.html">⚙ Panel Admin</a>
+      <a href="index.html">← Beranda</a>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <div class="main">
+    <div class="topbar">
+      <button class="icon-btn" id="btnToggle" title="Tampilkan/sembunyikan panel">☰</button>
+      <button class="model-pick" id="btnModel" title="Pilih model">
+        <span class="status-dot ok" id="apiDot"></span>
+        <span class="mname" id="modelName">…</span>
+        <span aria-hidden="true">▾</span>
+      </button>
+      <div class="top-actions">
+        <div class="effort-wrap">
+          <button class="pill-toggle" id="btnEffort" aria-haspopup="listbox" title="Atur effort AI (kedalaman berpikir)">⚡ <span id="effortLabel">Medium</span> ▾</button>
+          <div class="effort-menu" id="effortMenu" role="listbox" aria-label="Pilih effort AI" hidden>
+            <button role="option" data-effort="low"><strong>Low</strong><small>Cepat &amp; ringkas</small></button>
+            <button role="option" data-effort="medium"><strong>Medium</strong><small>Seimbang</small></button>
+            <button role="option" data-effort="high"><strong>High</strong><small>Mendalam &amp; teliti</small></button>
+          </div>
+        </div>
+        <button class="pill-toggle" id="btnSearch" aria-pressed="false" title="Aktifkan pencarian web">🌐 Search</button>
+        <button class="icon-btn" id="btnPrompt" title="Perpustakaan prompt">✨</button>
+        <button class="icon-btn" id="btnShare" title="Bagikan chat">🔗</button>
+        <button class="icon-btn" id="btnExport" title="Ekspor chat">⤓</button>
+        <button class="icon-btn" id="btnCmd" title="Command (Ctrl+K)">⌘</button>
+      </div>
+    </div>
+
+    <div class="thread" id="thread" aria-live="polite">
+      <div class="thread-inner" id="threadInner"></div>
+    </div>
+
+    <div class="composer-zone">
+      <div class="composer-wrap">
+        <div class="attach-preview" id="attachPreview"></div>
+        <div class="composer">
+          <label class="sr-only" for="input">Tulis pesan</label>
+          <textarea id="input" rows="1" placeholder="Tanya apa saja… (Enter kirim, Shift+Enter baris baru)"></textarea>
+          <div class="composer-bar">
+            <button class="icon-btn" id="btnAttachImg" title="Lampirkan gambar">🖼</button>
+            <button class="icon-btn" id="btnAttachFile" title="Lampirkan file teks">📎</button>
+            <button class="icon-btn" id="btnVoice" title="Input suara">🎙</button>
+            <button class="icon-btn" id="btnRegen" title="Ulangi jawaban terakhir">↻</button>
+            <button class="send-btn" id="btnSend" title="Kirim">↑</button>
+          </div>
+        </div>
+        <p class="composer-note">Model: <span id="footModel">…</span> · <span class="kbd">Ctrl</span>+<span class="kbd">K</span> perintah · <span class="kbd">Ctrl</span>+<span class="kbd">Shift</span>+<span class="kbd">O</span> chat baru</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<input type="file" id="fileImg" accept="image/*" class="sr-only" tabindex="-1">
+<input type="file" id="fileTxt" accept=".txt,.md,.json,.js,.ts,.py,.html,.css,.csv" class="sr-only" tabindex="-1">
+<div id="modalRoot"></div>
+
+<script src="assets/js/core.js"></script>
+<script src="assets/js/markdown.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
